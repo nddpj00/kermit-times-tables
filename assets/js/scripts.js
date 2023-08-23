@@ -31,8 +31,9 @@ function checkAnswer() {
   const valueTwo = parseFloat(document.getElementById("operand2").innerHTML);
   const answerInput = parseFloat(document.getElementById("answer").value);
   if (answerInput === valueOne * valueTwo) {
+    currentScore += 1;
     document.getElementById("result").innerHTML = "Well done, you are right!";
-    document.getElementById("result").innerHTML = currentScore + 1;
+    document.getElementById("score").innerHTML = currentScore;
   } else {
     document.getElementById("result").innerHTML = "Wrong, sorry!";
   }
