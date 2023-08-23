@@ -20,41 +20,150 @@
     </div>
     <div class="container">
       <div class="row mt-5">
-        <div class="col">
-          <button type="button" class="btn btn-secondary">1</button>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="timesTableradio"
+            value="1"
+            id="timesTableradio1"
+            checked
+          />
+          <label class="form-check-label" for="timesTableradio1">
+            1 Times Table
+          </label>
         </div>
-        <div class="col">
-          <button type="button" class="btn btn-secondary">2</button>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="timesTableradio"
+            value="2"
+            id="timesTableradio2"
+          />
+          <label class="form-check-label" for="timesTableradio2">
+            2 Times Table
+          </label>
         </div>
-        <div class="col">
-          <button type="button" class="btn btn-secondary">3</button>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="timesTableradio"
+            value="3"
+            id="timesTableradio3"
+          />
+          <label class="form-check-label" for="timesTableradio3">
+            3 Times Table
+          </label>
         </div>
-        <div class="col">
-          <button type="button" class="btn btn-secondary">4</button>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="timesTableradio"
+            value="4"
+            id="timesTableradio4"
+          />
+          <label class="form-check-label" for="timesTableradio4">
+            4 Times Table
+          </label>
         </div>
-        <div class="col">
-          <button type="button" class="btn btn-secondary">5</button>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="timesTableradio"
+            value="5"
+            id="timesTableradio5"
+          />
+          <label class="form-check-label" for="timesTableradio5">
+            5 Times Table
+          </label>
         </div>
-        <div class="col">
-          <button type="button" class="btn btn-secondary">6</button>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="timesTableradio"
+            value="6"
+            id="timesTableradio6"
+          />
+          <label class="form-check-label" for="timesTableradio6">
+            6 Times Table
+          </label>
         </div>
-        <div class="col">
-          <button type="button" class="btn btn-secondary">7</button>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="timesTableradio"
+            value="7"
+            id="timesTableradio7"
+          />
+          <label class="form-check-label" for="timesTableradio7">
+            7 Times Table
+          </label>
         </div>
-        <div class="col">
-          <button type="button" class="btn btn-secondary">8</button>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="timesTableradio"
+            value="8"
+            id="timesTableradio8"
+          />
+          <label class="form-check-label" for="timesTableradio8">
+            8 Times Table
+          </label>
         </div>
-        <div class="col">
-          <button type="button" class="btn btn-secondary">9</button>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="timesTableradio"
+            value="9"
+            id="timesTableradio9"
+          />
+          <label class="form-check-label" for="timesTableradio9">
+            9 Times Table
+          </label>
         </div>
-        <div class="col">
-          <button type="button" class="btn btn-secondary">10</button>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="timesTableradio"
+            value="10"
+            id="timesTableradio10"
+          />
+          <label class="form-check-label" for="timesTableradio10">
+            10 Times Table
+          </label>
         </div>
-        <div class="col">
-          <button type="button" class="btn btn-secondary">11</button>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="timesTableradio"
+            value="11"
+            id="timesTableradio11"
+          />
+          <label class="form-check-label" for="timesTableradio11">
+            11 Times Table
+          </label>
         </div>
-        <div class="col">
-          <button type="button" class="btn btn-secondary">12</button>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="timesTableradio"
+            value="12"
+            id="timesTableradio12"
+          />
+          <label class="form-check-label" for="timesTableradio12">
+            12 Times Table
+          </label>
         </div>
       </div>
 
@@ -76,11 +185,17 @@
           placeholder="Your answer"
           aria-label="Your answer"
           aria-describedby="button-addon2"
+          id="answer"
         />
-        <button class="btn btn-success" type="button" id="button-addon2">
+        <button class="btn btn-success" type="button" id="checkAnswerBtn">
           Go!
         </button>
+        <button class="btn btn-success" type="button" id="nextQuestion">
+          Next Question
+        </button>
       </div>
+      <div class="col" id="result"><h2></h2></div>
+      <div class="col" id="score"></div>
     </div>
 
     <script src="assets/js/scripts.js"></script>
