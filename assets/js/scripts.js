@@ -1,4 +1,6 @@
 import { highScores } from "./highScores.js";
+import { kermit } from "./kermit.js";
+
 console.log(highScores);
 let currentScore = 0;
 let currentHighScore = 0;
@@ -64,6 +66,7 @@ function checkAnswer() {
     currentScore += 1;
     document.getElementById("result").innerHTML = "Well done, you are right!";
     document.getElementById("score").innerHTML = currentScore;
+    kermit();
   } else {
     document.getElementById(
       "result"
