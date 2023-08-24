@@ -1,5 +1,5 @@
 import { highScores } from "./highScores.js";
-import { kermit } from "./kermit.js";
+import { kermit, removeKermit } from "./kermit.js";
 
 console.log(highScores);
 let currentScore = 0;
@@ -66,11 +66,11 @@ function checkAnswer() {
     currentScore += 1;
     document.getElementById("result").innerHTML = "Well done, you are right!";
     document.getElementById("score").innerHTML = currentScore;
-    kermit();
   } else {
     document.getElementById(
       "result"
     ).innerHTML = `"Wrong, sorry! Your final score is ${currentScore}`;
+    kermit();
     checkHighScore(selectedTimesTable, currentScore); // Pass the selected times table
   }
 }
@@ -80,6 +80,7 @@ document.getElementById("nextQuestion").addEventListener("click", nextQuestion);
 function nextQuestion() {
   document.getElementById("result").innerHTML = "";
   document.getElementById("answer").value = "";
+  removeKermit();
   setSum(selectedTimesTable, numGenerator());
 }
 
@@ -89,6 +90,7 @@ document.getElementById("restart").addEventListener("click", function () {
   document.getElementById("answer").value = "";
   document.getElementById("result").innerHTML = "";
   checkHighScore(selectedTimesTable, currentScore);
+  removeKermit();
   setSum(selectedTimesTable, numGenerator());
 });
 
