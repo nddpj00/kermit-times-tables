@@ -4,8 +4,28 @@ body {
 
 .question-area {
   background: white;
-  height: 200px;
+  height: 100px;
   width: 350px;
   font-size: 55px;
-  border-radius: 10%;
+  border-radius: 2%;
+}
+
+@media (max-width: 768px) {
+  .form-check {
+    display: none;
+  }
+
+  .dropdown-form {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .form-check {
+    display: flex;
+  }
+
+  .dropdown-form {
+    display: none;
+  }
 }
