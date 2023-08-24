@@ -80,20 +80,30 @@ function nextQuestion() {
   setSum(selectedTimesTable, numGenerator());
 }
 
-// // display current times table high score
-// document.getElementById("highScore").innerHTML = currentHighScore;
+document.getElementById("restart").addEventListener("click", function () {
+  currentScore = 0;
+  document.getElementById("score").innerHTML = currentScore;
+  document.getElementById("answer").value = "";
+  document.getElementById("result").innerHTML = "";
+  checkHighScore(selectedTimesTable, currentScore);
+  setSum(selectedTimesTable, numGenerator());
+});
 
 function checkHighScore(timesTable, score) {
-  console.log(timesTable);
-  console.log(score);
+  const indexToUpdate = highScores.findIndex(
+    (scoreObj) => Object.keys(scoreObj)[0] == timesTable.toString()
+  );
+  if (indexToUpdate !== -1) {
+    // Get the existing high score
+    const existingHighScore = highScores[indexToUpdate][timesTable];
+
+    // Update only if the provided score is higher
+    if (score > existingHighScore) {
+      highScores[indexToUpdate][timesTable] = score;
+      document.getElementById("highScore").innerHTML = score;
+      const highScoresString = JSON.stringify(highScores);
+      localStorage.setItem("highScoresData", highScoresString);
+      console.log(highScoresString);
+    }
+  }
 }
-
-//   const fs = require('fs');
-//   const data = fs.readFilesSync("highScores.json");
-//   const jsonData = JSON.parse(data);
-
-//   jsonData.highScores.push({
-//     timesTable: newCurrentScore,
-//   });
-//   fs.writeFileSync("highScores.json", JSON.stringify(jsonData));
-// }

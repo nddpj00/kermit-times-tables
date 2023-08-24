@@ -10,6 +10,10 @@ body {
   border-radius: 2%;
 }
 
+.retro {
+  font-family: "Press Start 2P", cursive;
+}
+
 @media (max-width: 768px) {
   .form-check {
     display: none;
