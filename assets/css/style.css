@@ -2,6 +2,10 @@ body {
   background: rgb(180, 8, 180);
 }
 
+.mainHeader {
+  margin-top: 4.5rem;
+}
+
 .question-area {
   background: white;
   height: 100px;
@@ -10,11 +14,57 @@ body {
   border-radius: 2%;
 }
 
+@keyframes trevor-3d-animation {
+  0% {
+    transform: translateZ(0) scale(1);
+  }
+  50% {
+    transform: translateZ(150px) scale(1.5);
+  }
+  100% {
+    transform: translateZ(300px) scale(2);
+  }
+}
+
+.trevor-3d {
+  animation: trevor-3d-animation 5s;
+}
+
+@keyframes trevor-animation {
+  0% {
+    transform: translateX(0);
+  } /* Starting position */
+  50% {
+    transform: translateX(300px);
+  } /* Midway position */
+  100% {
+    transform: translateX(0);
+  } /* Back to starting position */
+}
+
+.trevor-animation {
+  animation: trevor-animation 5s;
+}
+
+.trevor {
+  width: 100px;
+}
+
+.timesDropDown {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.timesRadioBtns {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
 .retro {
   font-family: "Press Start 2P", cursive;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .form-check {
     display: none;
   }
@@ -24,7 +74,7 @@ body {
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1201px) {
   .form-check {
     display: flex;
   }

@@ -19,14 +19,26 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="row mt-4">
+    <div class="row mainHeader">
       <div class="col d-flex justify-content-center">
-        <h1>Trevors Tricky Times Tables!</h1>
+        <audio id="trevorWhooHoo">
+          <source src="./assets/images/trevorWhooHoo.mp3" type="audio/mp3" />
+        </audio>
+        <img
+          class="trevor trevor-animation"
+          src="./assets/images/trevor-transparent.png"
+          alt="trevor the teddy"
+        />
+        <h1>Trevors Times Tables Challenge!</h1>
       </div>
     </div>
-
+    <div class="row d-none d-sm-block mt-5">
+      <div class="col d-flex justify-content-center">
+        <p>Choose your Times Table</p>
+      </div>
+    </div>
     <div class="container">
-      <div class="row mt-5">
+      <div class="row timesRadioBtns">
         <div class="col form-check d-none d-sm-block">
           <input
             class="form-check-input"
@@ -36,9 +48,7 @@
             id="timesTableradio1"
             checked
           />
-          <label class="form-check-label" for="timesTableradio1">
-            1 Times Table
-          </label>
+          <label class="form-check-label" for="timesTableradio1"> 1 </label>
         </div>
         <div class="col form-check d-none d-sm-block">
           <input
@@ -48,9 +58,7 @@
             value="2"
             id="timesTableradio2"
           />
-          <label class="form-check-label" for="timesTableradio2">
-            2 Times Table
-          </label>
+          <label class="form-check-label" for="timesTableradio2"> 2 </label>
         </div>
         <div class="col form-check d-none d-sm-block">
           <input
@@ -60,9 +68,7 @@
             value="3"
             id="timesTableradio3"
           />
-          <label class="form-check-label" for="timesTableradio3">
-            3 Times Table
-          </label>
+          <label class="form-check-label" for="timesTableradio3"> 3 </label>
         </div>
         <div class="col form-check d-none d-sm-block">
           <input
@@ -72,9 +78,7 @@
             value="4"
             id="timesTableradio4"
           />
-          <label class="form-check-label" for="timesTableradio4">
-            4 Times Table
-          </label>
+          <label class="form-check-label" for="timesTableradio4"> 4 </label>
         </div>
         <div class="col form-check d-none d-sm-block">
           <input
@@ -84,9 +88,7 @@
             value="5"
             id="timesTableradio5"
           />
-          <label class="form-check-label" for="timesTableradio5">
-            5 Times Table
-          </label>
+          <label class="form-check-label" for="timesTableradio5"> 5 </label>
         </div>
         <div class="col form-check d-none d-sm-block">
           <input
@@ -96,9 +98,7 @@
             value="6"
             id="timesTableradio6"
           />
-          <label class="form-check-label" for="timesTableradio6">
-            6 Times Table
-          </label>
+          <label class="form-check-label" for="timesTableradio6"> 6 </label>
         </div>
         <div class="col form-check d-none d-sm-block">
           <input
@@ -108,9 +108,7 @@
             value="7"
             id="timesTableradio7"
           />
-          <label class="form-check-label" for="timesTableradio7">
-            7 Times Table
-          </label>
+          <label class="form-check-label" for="timesTableradio7"> 7 </label>
         </div>
         <div class="col form-check d-none d-sm-block">
           <input
@@ -120,9 +118,7 @@
             value="8"
             id="timesTableradio8"
           />
-          <label class="form-check-label" for="timesTableradio8">
-            8 Times Table
-          </label>
+          <label class="form-check-label" for="timesTableradio8"> 8 </label>
         </div>
         <div class="col form-check d-none d-sm-block">
           <input
@@ -132,9 +128,7 @@
             value="9"
             id="timesTableradio9"
           />
-          <label class="form-check-label" for="timesTableradio9">
-            9 Times Table
-          </label>
+          <label class="form-check-label" for="timesTableradio9"> 9 </label>
         </div>
         <div class="col form-check d-none d-sm-block">
           <input
@@ -144,9 +138,7 @@
             value="10"
             id="timesTableradio10"
           />
-          <label class="form-check-label" for="timesTableradio10">
-            10 Times Table
-          </label>
+          <label class="form-check-label" for="timesTableradio10"> 10 </label>
         </div>
         <div class="col form-check d-none d-sm-block">
           <input
@@ -156,9 +148,7 @@
             value="11"
             id="timesTableradio11"
           />
-          <label class="form-check-label" for="timesTableradio11">
-            11 Times Table
-          </label>
+          <label class="form-check-label" for="timesTableradio11"> 11 </label>
         </div>
         <div class="col form-check d-none d-sm-block">
           <input
@@ -168,17 +158,12 @@
             value="12"
             id="timesTableradio12"
           />
-          <label class="form-check-label" for="timesTableradio12">
-            12 Times Table
-          </label>
+          <label class="form-check-label" for="timesTableradio12"> 12 </label>
         </div>
       </div>
 
       <div class="row mt-5">
-        <div class="col d-sm-none">
-          <label class="form-check-label" for="timesTableDropdown">
-            Times Table
-          </label>
+        <div class="col d-sm-none timesDropDown">
           <select
             class="form-select dropdown-form"
             id="timesTableDropdown"
