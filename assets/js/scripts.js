@@ -5,32 +5,75 @@ console.log(highScores);
 let currentScore = 0;
 let currentHighScore = 0;
 let selectedTimesTable = "1";
+let answerChecked = false;
+let previousNum2 = null;
+let lastQuestionIncorrect = false;
 const timesRadios = document.getElementsByName("timesTableradio");
 const timesTableDropdown = document.getElementById("timesTableDropdown");
 
-// Event listener for radio buttons when viewed on medium and up devices
-for (const radio of timesRadios) {
-  radio.addEventListener("change", function () {
-    if (this.checked) {
-      updateSelectedTimesTable(this.value);
-      const indexNumber = this.value - 1;
-      const hiScore = highScores[indexNumber];
-      currentHighScore = hiScore[indexNumber + 1];
-      document.getElementById("highScore").innerHTML = currentHighScore;
-      setSum(selectedTimesTable, numGenerator());
-    }
+function initialisePage() {
+  setSum(selectedTimesTable, numGenerator());
+
+  // Event listener for radio buttons when viewed on medium and up devices
+  for (const radio of timesRadios) {
+    radio.addEventListener("change", function () {
+      if (this.checked) {
+        updateSelectedTimesTable(this.value);
+        const indexNumber = this.value - 1;
+        const hiScore = highScores[indexNumber];
+        currentHighScore = hiScore[indexNumber + 1];
+        document.getElementById("highScore").innerHTML = currentHighScore;
+        setSum(selectedTimesTable, numGenerator());
+      }
+    });
+  }
+
+  // Event listener for dropdown for viewing on small devices.
+  timesTableDropdown.addEventListener("change", function () {
+    updateSelectedTimesTable(this.value);
+    const indexNumber = this.value - 1;
+    const hiScore = highScores[indexNumber];
+    currentHighScore = hiScore[indexNumber + 1];
+    document.getElementById("highScore").innerHTML = currentHighScore;
+    setSum(selectedTimesTable, numGenerator());
   });
+
+  // Event listener for checkAnswerBtn 'Go'
+  document
+    .getElementById("checkAnswerBtn")
+    .addEventListener("click", function () {
+      checkAnswer();
+      answerChecked = true; // Set the flag to true after checking the answer
+    });
+
+  // Event listener for nextQuestion button
+  document
+    .getElementById("nextQuestion")
+    .addEventListener("click", function () {
+      if (answerChecked) {
+        nextQuestion();
+        answerChecked = false; // Reset the flag when moving to the next question
+      } else {
+        // Display a message or perform an action indicating that the answer needs to be checked first
+        alert("Please answer the sum first.. thanks");
+      }
+    });
 }
 
-// Event listener for dropdown for viewing on small devices.
-timesTableDropdown.addEventListener("change", function () {
-  updateSelectedTimesTable(this.value);
-  const indexNumber = this.value - 1;
-  const hiScore = highScores[indexNumber];
-  currentHighScore = hiScore[indexNumber + 1];
-  document.getElementById("highScore").innerHTML = currentHighScore;
+window.addEventListener("load", initialisePage);
+// Event listener for restart button
+document.getElementById("restart").addEventListener("click", restartTheFunc);
+
+function restartTheFunc() {
+  currentScore = 0;
+  document.getElementById("score").innerHTML = currentScore;
+  document.getElementById("answer").value = "";
+  document.getElementById("result").innerHTML = "";
+  checkHighScore(selectedTimesTable, currentScore);
+  removeKermit();
   setSum(selectedTimesTable, numGenerator());
-});
+  answerChecked = false;
+}
 
 function updateSelectedTimesTable(value) {
   if (selectedTimesTable !== value) {
@@ -53,10 +96,6 @@ function setSum(num1, num2) {
   operandTwo.innerHTML = num2;
 }
 
-document
-  .getElementById("checkAnswerBtn")
-  .addEventListener("click", checkAnswer);
-
 function checkAnswer() {
   const valueOne = parseFloat(document.getElementById("operand1").innerHTML);
   const valueTwo = parseFloat(document.getElementById("operand2").innerHTML);
@@ -70,29 +109,34 @@ function checkAnswer() {
     document.getElementById(
       "result"
     ).innerHTML = `"Wrong, sorry! Your final score is ${currentScore}`;
-    kermit();
+    if (currentScore < 3) {
+      kermit();
+    }
+    lastQuestionIncorrect = true;
     checkHighScore(selectedTimesTable, currentScore); // Pass the selected times table
   }
 }
-
-document.getElementById("nextQuestion").addEventListener("click", nextQuestion);
 
 function nextQuestion() {
   document.getElementById("result").innerHTML = "";
   document.getElementById("answer").value = "";
   removeKermit();
-  setSum(selectedTimesTable, numGenerator());
-}
+  //reset currentScore if last question answered incorrectly.
+  if (lastQuestionIncorrect) {
+    currentScore = 0;
+    document.getElementById("score").innerHTML = currentScore;
+    lastQuestionIncorrect = false; // Reset the flag
+  }
+  // Generate a new num2 value that is not the same as the previous value
+  let newNum2 = numGenerator();
+  while (newNum2 === previousNum2) {
+    newNum2 = numGenerator();
+  }
 
-document.getElementById("restart").addEventListener("click", function () {
-  currentScore = 0;
-  document.getElementById("score").innerHTML = currentScore;
-  document.getElementById("answer").value = "";
-  document.getElementById("result").innerHTML = "";
-  checkHighScore(selectedTimesTable, currentScore);
-  removeKermit();
-  setSum(selectedTimesTable, numGenerator());
-});
+  setSum(selectedTimesTable, newNum2);
+
+  previousNum2 = newNum2; // Store the new num2 value as the previous value
+}
 
 function checkHighScore(timesTable, score) {
   const indexToUpdate = highScores.findIndex(
