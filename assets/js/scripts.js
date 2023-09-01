@@ -102,16 +102,6 @@ function setSum(num1, num2) {
   operandTwo.innerHTML = num2;
 }
 
-const soundEffect = document.getElementById("trevorWhooHoo");
-
-soundEffect.addEventListener("loadedmetadata", function () {
-  // Audio has loaded, you can now play it
-});
-
-function playSound() {
-  soundEffect.currentTime = 0;
-  soundEffect.play();
-}
 function checkAnswer() {
   const valueOne = parseFloat(document.getElementById("operand1").innerHTML);
   const valueTwo = parseFloat(document.getElementById("operand2").innerHTML);
@@ -121,7 +111,6 @@ function checkAnswer() {
     currentScore += 1;
     document.getElementById("result").innerHTML = "Well done, you are right!";
     document.getElementById("score").innerHTML = currentScore;
-    playSound();
   } else {
     document.getElementById(
       "result"
