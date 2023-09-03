@@ -1,4 +1,6 @@
 body {
+  margin: 0;
+  padding: 0;
   background: rgb(43, 5, 43);
 }
 
@@ -6,11 +8,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%; /* Set the container height to 100% of its parent's height (full viewport height) */
+  height: 100%;
 }
 
 .mainHeader {
-  margin-top: 4.5rem;
+  margin-top: 3.5rem;
 }
 
 .mainHeader h1 {
@@ -23,6 +25,12 @@ body {
   margin-left: 5%;
   margin-right: 5%;
   font-size: 14px;
+}
+
+.btn-check:checked + .btn.greenbtn {
+  background-color: white !important;
+  color: #7ea102 !important; /* You can also change the text color */
+  border-color: black; /* You can also change the border color */
 }
 
 .question-area {
@@ -98,6 +106,16 @@ body {
 .retro {
   font-family: "Press Start 2P", cursive;
   color: #fdfdfd;
+}
+
+.lg_screen_text {
+  font-family: "Titan One", cursive;
+  color: #fdfdfd;
+}
+
+.lg_screen_text .col.form-check {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 @media (max-width: 1200px) {

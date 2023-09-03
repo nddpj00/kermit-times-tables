@@ -23,217 +23,220 @@
   <body>
     <div class="full-height-container">
       <div class="row mainHeader">
-        <div class="col d-flex justify-content-center" />
-        <img
-          class="kermit kermit-3d"
-          src="./assets/images/kermit-tranparent-burst.png"
-          alt="kermit the frog"
-        />
-        <h1 class="maintitle">
-          Kermit's<br />
-          Times Table Challenge!
-        </h1>
-      </div>
-    </div>
-    <div class="row d-none d-sm-block mt-5">
-      <div class="col d-flex justify-content-center">
-        <p>Choose your Times Table</p>
-      </div>
-    </div>
-    <div class="row timesRadioBtns">
-      <div class="col form-check d-none d-sm-block">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="timesTableradio"
-          value="1"
-          id="timesTableradio1"
-          checked
-        />
-        <label class="form-check-label" for="timesTableradio1"> 1 </label>
-      </div>
-      <div class="col form-check d-none d-sm-block">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="timesTableradio"
-          value="2"
-          id="timesTableradio2"
-        />
-        <label class="form-check-label" for="timesTableradio2"> 2 </label>
-      </div>
-      <div class="col form-check d-none d-sm-block">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="timesTableradio"
-          value="3"
-          id="timesTableradio3"
-        />
-        <label class="form-check-label" for="timesTableradio3"> 3 </label>
-      </div>
-      <div class="col form-check d-none d-sm-block">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="timesTableradio"
-          value="4"
-          id="timesTableradio4"
-        />
-        <label class="form-check-label" for="timesTableradio4"> 4 </label>
-      </div>
-      <div class="col form-check d-none d-sm-block">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="timesTableradio"
-          value="5"
-          id="timesTableradio5"
-        />
-        <label class="form-check-label" for="timesTableradio5"> 5 </label>
-      </div>
-      <div class="col form-check d-none d-sm-block">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="timesTableradio"
-          value="6"
-          id="timesTableradio6"
-        />
-        <label class="form-check-label" for="timesTableradio6"> 6 </label>
-      </div>
-      <div class="col form-check d-none d-sm-block">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="timesTableradio"
-          value="7"
-          id="timesTableradio7"
-        />
-        <label class="form-check-label" for="timesTableradio7"> 7 </label>
-      </div>
-      <div class="col form-check d-none d-sm-block">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="timesTableradio"
-          value="8"
-          id="timesTableradio8"
-        />
-        <label class="form-check-label" for="timesTableradio8"> 8 </label>
-      </div>
-      <div class="col form-check d-none d-sm-block">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="timesTableradio"
-          value="9"
-          id="timesTableradio9"
-        />
-        <label class="form-check-label" for="timesTableradio9"> 9 </label>
-      </div>
-      <div class="col form-check d-none d-sm-block">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="timesTableradio"
-          value="10"
-          id="timesTableradio10"
-        />
-        <label class="form-check-label" for="timesTableradio10"> 10 </label>
-      </div>
-      <div class="col form-check d-none d-sm-block">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="timesTableradio"
-          value="11"
-          id="timesTableradio11"
-        />
-        <label class="form-check-label" for="timesTableradio11"> 11 </label>
-      </div>
-      <div class="col form-check d-none d-sm-block">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="timesTableradio"
-          value="12"
-          id="timesTableradio12"
-        />
-        <label class="form-check-label" for="timesTableradio12"> 12 </label>
-      </div>
-    </div>
-
-    <div class="row mt-5">
-      <div class="col d-sm-none timesDropDown">
-        <select
-          class="form-select dropdown-form"
-          id="timesTableDropdown"
-          aria-label="Times Table"
-        >
-          <option value="1">1 Times Table</option>
-          <option value="2">2 Times Table</option>
-          <option value="3">3 Times Table</option>
-          <option value="4">4 Times Table</option>
-          <option value="5">5 Times Table</option>
-          <option value="6">6 Times Table</option>
-          <option value="7">7 Times Table</option>
-          <option value="8">8 Times Table</option>
-          <option value="9">9 Times Table</option>
-          <option value="10">10 Times Table</option>
-          <option value="11">11 Times Table</option>
-          <option value="12">12 Times Table</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="row d-flex justify-content-center mt-3 scores">
-      <div class="col retro">
-        <p>Score:</p>
-        <p id="score"></p>
-      </div>
-      <div class="col retro">
-        <p>High Score:</p>
-        <p id="highScore"></p>
-      </div>
-    </div>
-
-    <div class="row mt-4 mb-4">
-      <div class="col d-flex justify-content-center align-middle">
-        <div class="question-area">
-          <span id="operand1">0</span>
-          <span id="operator">X</span>
-          <span id="operand2">0</span>
-          <span>=</span>
-
-          <input
-            type="number"
-            aria-label="Your answer"
-            aria-describedby="button-addon2"
-            id="answer"
+        <div class="col d-flex justify-content-center">
+          <img
+            class="kermit kermit-3d"
+            src="./assets/images/kermit-tranparent-burst.png"
+            alt="kermit the frog"
           />
+          <h1 class="maintitle">
+            Kermit's<br />
+            Times Table Challenge!
+          </h1>
         </div>
-        <button class="greenbtn btn goBtn" type="button" id="checkAnswerBtn">
-          Go!
-        </button>
+      </div>
+
+      <div class="row d-none d-sm-block mt-3 lg_screen_text">
+        <div class="col d-flex justify-content-center">
+          <p>Choose your Times Table</p>
+        </div>
+      </div>
+      <div class="row lg_screen_text justify-content-center">
+        <div class="col-1 d-none d-sm-block">
+          <input
+            class="btn-check"
+            type="radio"
+            name="timesTableradio"
+            value="1"
+            id="timesTableradio1"
+            checked
+          />
+          <label class="btn greenbtn" for="timesTableradio1"> 1 </label>
+        </div>
+        <div class="col-1 d-none d-sm-block">
+          <input
+            class="btn-check"
+            type="radio"
+            name="timesTableradio"
+            value="2"
+            id="timesTableradio2"
+          />
+          <label class="btn greenbtn" for="timesTableradio2"> 2 </label>
+        </div>
+        <div class="col-1 d-none d-sm-block">
+          <input
+            class="btn-check"
+            type="radio"
+            name="timesTableradio"
+            value="3"
+            id="timesTableradio3"
+          />
+          <label class="btn greenbtn" for="timesTableradio3"> 3 </label>
+        </div>
+        <div class="col-1 d-none d-sm-block">
+          <input
+            class="btn-check"
+            type="radio"
+            name="timesTableradio"
+            value="4"
+            id="timesTableradio4"
+          />
+          <label class="btn greenbtn" for="timesTableradio4"> 4 </label>
+        </div>
+        <div class="col-1 d-none d-sm-block">
+          <input
+            class="btn-check"
+            type="radio"
+            name="timesTableradio"
+            value="5"
+            id="timesTableradio5"
+          />
+          <label class="btn greenbtn" for="timesTableradio5"> 5 </label>
+        </div>
+        <div class="col-1 d-none d-sm-block">
+          <input
+            class="btn-check"
+            type="radio"
+            name="timesTableradio"
+            value="6"
+            id="timesTableradio6"
+          />
+          <label class="btn greenbtn" for="timesTableradio6"> 6 </label>
+        </div>
+      </div>
+      <div class="row lg_screen_text justify-content-center mt-1">
+        <div class="col-1 d-none d-sm-block">
+          <input
+            class="btn-check"
+            type="radio"
+            name="timesTableradio"
+            value="7"
+            id="timesTableradio7"
+          />
+          <label class="btn greenbtn" for="timesTableradio7"> 7 </label>
+        </div>
+        <div class="col-1 d-none d-sm-block">
+          <input
+            class="btn-check"
+            type="radio"
+            name="timesTableradio"
+            value="8"
+            id="timesTableradio8"
+          />
+          <label class="btn greenbtn" for="timesTableradio8"> 8 </label>
+        </div>
+        <div class="col-1 d-none d-sm-block">
+          <input
+            class="btn-check"
+            type="radio"
+            name="timesTableradio"
+            value="9"
+            id="timesTableradio9"
+          />
+          <label class="btn greenbtn" for="timesTableradio9"> 9 </label>
+        </div>
+        <div class="col-1 d-none d-sm-block">
+          <input
+            class="btn-check"
+            type="radio"
+            name="timesTableradio"
+            value="10"
+            id="timesTableradio10"
+          />
+          <label class="btn greenbtn" for="timesTableradio10"> 10 </label>
+        </div>
+        <div class="col-1 d-none d-sm-block">
+          <input
+            class="btn-check"
+            type="radio"
+            name="timesTableradio"
+            value="11"
+            id="timesTableradio11"
+          />
+          <label class="btn greenbtn" for="timesTableradio11"> 11 </label>
+        </div>
+        <div class="col-1 d-none d-sm-block">
+          <input
+            class="btn-check"
+            type="radio"
+            name="timesTableradio"
+            value="12"
+            id="timesTableradio12"
+          />
+          <label class="btn greenbtn" for="timesTableradio12"> 12 </label>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col d-sm-none timesDropDown">
+          <select
+            class="form-select dropdown-form"
+            id="timesTableDropdown"
+            aria-label="Times Table"
+          >
+            <option value="1">1 Times Table</option>
+            <option value="2">2 Times Table</option>
+            <option value="3">3 Times Table</option>
+            <option value="4">4 Times Table</option>
+            <option value="5">5 Times Table</option>
+            <option value="6">6 Times Table</option>
+            <option value="7">7 Times Table</option>
+            <option value="8">8 Times Table</option>
+            <option value="9">9 Times Table</option>
+            <option value="10">10 Times Table</option>
+            <option value="11">11 Times Table</option>
+            <option value="12">12 Times Table</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row d-flex justify-content-center mt-3 scores text-center">
+        <div class="col retro">
+          <p>Score:</p>
+          <p id="score"></p>
+        </div>
+        <div class="col retro">
+          <p>High Score:</p>
+          <p id="highScore"></p>
+        </div>
+      </div>
+
+      <div class="row mt-2 mb-4">
+        <div class="col d-flex justify-content-center align-middle">
+          <div class="question-area">
+            <span id="operand1">0</span>
+            <span id="operator">X</span>
+            <span id="operand2">0</span>
+            <span>=</span>
+
+            <input
+              type="number"
+              aria-label="Your answer"
+              aria-describedby="button-addon2"
+              id="answer"
+            />
+          </div>
+          <button class="greenbtn btn goBtn" type="button" id="checkAnswerBtn">
+            Go!
+          </button>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col d-flex justify-content-center">
+          <button class="btn greenbtn me-2" type="button" id="restart">
+            Restart
+          </button>
+          <button class="btn greenbtn" type="button" id="nextQuestion">
+            Next Question
+          </button>
+        </div>
+      </div>
+
+      <div class="row d-flex justify-content-center mt-3 mb-3">
+        <div class="col retro" id="result"><h2></h2></div>
       </div>
     </div>
-
-    <div class="row mt-4">
-      <div class="col d-flex justify-content-center">
-        <button class="btn greenbtn me-2" type="button" id="restart">
-          Restart
-        </button>
-        <button class="btn greenbtn" type="button" id="nextQuestion">
-          Next Question
-        </button>
-      </div>
-    </div>
-
-    <div class="row d-flex justify-content-center mt-3 mb-3">
-      <div class="col retro" id="result"><h2></h2></div>
-    </div>
-
     <script type="module" src="assets/js/scripts.js"></script>
     <script type="module" src="assets/js/highScores.js"></script>
     <script type="module" src="assets/js/kermit.js"></script>
