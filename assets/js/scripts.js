@@ -144,14 +144,14 @@ function nextQuestion() {
     lastQuestionIncorrect = false; // Reset the flag
   }
   // Generate a new num2 value that is not the same as the previous value
-  let newNum2 = numGenerator();
-  while (newNum2 === previousNum2) {
+  let newNum2;
+  do {
     newNum2 = numGenerator();
-  }
+  } while (newNum2 === previousNum2);
 
   setSum(selectedTimesTable, newNum2);
 
-  previousNum2 = newNum2; // Store the new num2 value as the previous value
+  previousNum2 = newNum2;
 }
 
 function checkHighScore(timesTable, score) {

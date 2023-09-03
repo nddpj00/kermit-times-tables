@@ -89,9 +89,9 @@ body {
 }
 
 .greenbtn {
-  background-color: #7ea102;
+  background-color: #7ea102 !important;
   font-size: large;
-  color: #fdfdfd;
+  color: #fdfdfd !important;
   font-weight: 500;
 }
 
