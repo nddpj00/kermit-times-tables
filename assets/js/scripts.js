@@ -48,8 +48,12 @@ function initialisePage() {
   document
     .getElementById("checkAnswerBtn")
     .addEventListener("click", function () {
-      checkAnswer();
-      answerChecked = true; // Set the flag to true after checking the answer
+      if (answerChecked === true) {
+        alert("Please select next question.");
+      } else {
+        checkAnswer();
+        answerChecked = true; // Set the flag to true after checking the answer
+      }
     });
 
   // Event listener for nextQuestion button

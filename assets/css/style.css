@@ -40,17 +40,8 @@ body {
   0% {
     transform: translateZ(0) scale(1);
   }
-  20% {
-    transform: translateZ(75px) scale(1.5);
-  }
-  40% {
-    transform: translateZ(150px) scale(2);
-  }
-  60% {
-    transform: translateZ(140px) scale(1.8);
-  }
-  80% {
-    transform: translateZ(75px) scale(1.5);
+  50% {
+    transform: translateZ(140px) scale(1.5);
   }
   100% {
     transform: translateZ(0) scale(1);
@@ -59,22 +50,6 @@ body {
 
 .kermit-3d {
   animation: kermit-3d-animation 5s alternate;
-}
-
-@keyframes trevor-animation {
-  0% {
-    transform: translateX(0);
-  } /* Starting position */
-  50% {
-    transform: translateX(300px);
-  } /* Midway position */
-  100% {
-    transform: translateX(0);
-  } /* Back to starting position */
-}
-
-.kermit-animation {
-  animation: trevor-animation 5s;
 }
 
 .kermit {
@@ -128,6 +103,10 @@ body {
 
   .mainHeader H1 {
     font-size: 40px;
+  }
+
+  .mainHeader {
+    margin-top: 3.5rem;
   }
 
   #result {
