@@ -1,5 +1,5 @@
 body {
-  background: rgb(180, 8, 180);
+  background: rgb(43, 5, 43);
 }
 
 .kermit-container {
@@ -74,7 +74,7 @@ body {
   font-size: 3rem;
   border-color: black;
   border-radius: 10px;
-  background-color: rgb(204, 232, 202);
+  background-color: rgb(222, 225, 222);
   margin-right: 5px;
 }
 
@@ -85,6 +85,13 @@ body {
 
 .goBtn {
   border-radius: 0px 10px 10px 0px;
+}
+
+.greenbtn {
+  background-color: #7ea102;
+  font-size: large;
+  color: #fdfdfd;
+  font-weight: 500;
 }
 
 .retro {
