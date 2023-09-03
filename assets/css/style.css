@@ -79,8 +79,9 @@ body {
 }
 
 #result {
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
+  font-family: "Titan One", cursive;
 }
 
 .goBtn {

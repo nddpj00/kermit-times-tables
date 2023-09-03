@@ -53,10 +53,13 @@ function initialisePage() {
   document
     .getElementById("checkAnswerBtn")
     .addEventListener("click", function () {
+      const answerInput = parseFloat(document.getElementById("answer").value);
       if (answerChecked === true) {
         alert("Please select next question.");
+      } else if (isNaN(answerInput)) {
+        alert("Please input an answer first");
       } else {
-        checkAnswer();
+        checkAnswer(answerInput);
         answerChecked = true; // Set the flag to true after checking the answer
       }
     });
@@ -80,12 +83,12 @@ window.addEventListener("load", initialisePage);
 document.getElementById("restart").addEventListener("click", restartTheFunc);
 
 function restartTheFunc() {
+  removeKermit();
   currentScore = 0;
   document.getElementById("score").innerHTML = currentScore;
   document.getElementById("answer").value = "";
   document.getElementById("result").innerHTML = "";
-  checkHighScore(selectedTimesTable, currentScore);
-  removeKermit();
+  // checkHighScore(selectedTimesTable, currentScore);
   setSum(selectedTimesTable, numGenerator());
   answerChecked = false;
 }
@@ -111,12 +114,12 @@ function setSum(num1, num2) {
   operandTwo.innerHTML = num2;
 }
 
-function checkAnswer() {
+function checkAnswer(inputtedAnswer) {
   const valueOne = parseFloat(document.getElementById("operand1").innerHTML);
   const valueTwo = parseFloat(document.getElementById("operand2").innerHTML);
-  const answerInput = parseFloat(document.getElementById("answer").value);
+  // const answerInput = parseFloat(document.getElementById("answer").value);
 
-  if (answerInput === valueOne * valueTwo) {
+  if (inputtedAnswer === valueOne * valueTwo) {
     currentScore += 1;
     document.getElementById("result").innerHTML = "Well done, you are right!";
     document.getElementById("score").innerHTML = currentScore;
@@ -165,7 +168,7 @@ function checkHighScore(timesTable, score) {
       document.getElementById("highScore").innerHTML = score;
       const highScoresString = JSON.stringify(highScores);
       localStorage.setItem("highScoresData", highScoresString);
-      kermitHighscore();
+      kermitHighscore(score);
       console.log(highScoresString);
     } else if (score < 3) {
       kermitLoser();

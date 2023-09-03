@@ -42,11 +42,14 @@ export function kermitFine() {
   }
 }
 
-export function kermitHighscore() {
+export function kermitHighscore(newHighScore) {
   // Create the Kermit GIF container
   const kermitContainer = document.createElement("div");
   kermitContainer.setAttribute("class", "kermit-container");
 
+  document.getElementById(
+    "result"
+  ).innerHTML = `Incorrect....but ${newHighScore} is a new High Score!`;
   // Create the Kermit GIF element
   const kermitGif = document.createElement("img");
   kermitGif.setAttribute("src", "assets/images/kermitHiScore.gif");
