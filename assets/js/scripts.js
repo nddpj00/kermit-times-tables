@@ -1,5 +1,10 @@
 import { highScores } from "./highScores.js";
-import { kermit, removeKermit } from "./kermit.js";
+import {
+  kermitLoser,
+  kermitFine,
+  kermitHighscore,
+  removeKermit,
+} from "./kermit.js";
 
 console.log(highScores);
 let currentScore = 0;
@@ -119,9 +124,7 @@ function checkAnswer() {
     document.getElementById(
       "result"
     ).innerHTML = `"Wrong, sorry! Your final score is ${currentScore}`;
-    if (currentScore < 3) {
-      kermit();
-    }
+
     lastQuestionIncorrect = true;
     checkHighScore(selectedTimesTable, currentScore); // Pass the selected times table
   }
@@ -162,7 +165,12 @@ function checkHighScore(timesTable, score) {
       document.getElementById("highScore").innerHTML = score;
       const highScoresString = JSON.stringify(highScores);
       localStorage.setItem("highScoresData", highScoresString);
+      kermitHighscore();
       console.log(highScoresString);
+    } else if (score < 3) {
+      kermitLoser();
+    } else {
+      kermitFine();
     }
   }
 }
