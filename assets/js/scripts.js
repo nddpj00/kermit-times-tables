@@ -25,6 +25,7 @@ function initialisePage() {
       if (this.checked) {
         updateSelectedTimesTable(this.value);
         removeKermit();
+        answerChecked = false;
         document.getElementById("answer").value = "";
         document.getElementById("result").innerHTML = "";
         const indexNumber = this.value - 1;
@@ -40,6 +41,7 @@ function initialisePage() {
   timesTableDropdown.addEventListener("change", function () {
     updateSelectedTimesTable(this.value);
     removeKermit();
+    answerChecked = false;
     document.getElementById("answer").value = "";
     document.getElementById("result").innerHTML = "";
     const indexNumber = this.value - 1;
