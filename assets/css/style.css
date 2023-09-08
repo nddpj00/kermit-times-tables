@@ -21,6 +21,10 @@ body {
   color: #fdfdfd;
 }
 
+#operand1 {
+  margin-left: 10px;
+}
+
 .scores {
   margin-left: 5%;
   margin-right: 5%;
@@ -83,7 +87,7 @@ body {
   border-color: black;
   border-radius: 10px;
   background-color: rgb(222, 225, 222);
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 #result {

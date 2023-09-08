@@ -6,7 +6,6 @@ import {
   removeKermit,
 } from "./kermit.js";
 
-console.log(highScores);
 let currentScore = 0;
 let currentHighScore = 0;
 let selectedTimesTable = "1";
@@ -62,7 +61,7 @@ function initialisePage() {
         alert("Please input an answer first");
       } else {
         checkAnswer(answerInput);
-        answerChecked = true; // Set the flag to true after checking the answer
+        answerChecked = true;
       }
     });
 
@@ -72,9 +71,8 @@ function initialisePage() {
     .addEventListener("click", function () {
       if (answerChecked) {
         nextQuestion();
-        answerChecked = false; // Reset the flag when moving to the next question
+        answerChecked = false;
       } else {
-        // Display a message or perform an action indicating that the answer needs to be checked first
         alert("Please answer the sum first.. thanks");
       }
     });
@@ -119,7 +117,6 @@ function setSum(num1, num2) {
 function checkAnswer(inputtedAnswer) {
   const valueOne = parseFloat(document.getElementById("operand1").innerHTML);
   const valueTwo = parseFloat(document.getElementById("operand2").innerHTML);
-  // const answerInput = parseFloat(document.getElementById("answer").value);
 
   if (inputtedAnswer === valueOne * valueTwo) {
     currentScore += 1;
