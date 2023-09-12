@@ -33,8 +33,8 @@ body {
 
 .btn-check:checked + .btn.greenbtn {
   background-color: white !important;
-  color: #7ea102 !important; /* You can also change the text color */
-  border-color: black; /* You can also change the border color */
+  color: #7ea102 !important;
+  border-color: black;
 }
 
 .question-area {
